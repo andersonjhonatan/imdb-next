@@ -1,12 +1,12 @@
+import Image from 'next/image'
 import React from 'react'
-import { GrSolaris } from "react-icons/gr";
 
 
 function loading() {
   return (
     <div>
       <div className="flex justify-center items-center h-screen">
-        <GrSolaris className="text-5xl animate-spin" />
+        <Image src="/spinner.svg" alt="loading" width={200} height={200} />
       </div>
     </div>
   )

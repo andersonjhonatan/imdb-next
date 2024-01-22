@@ -10,15 +10,15 @@ const Cards = ({ cards }) => {
   const cardResult = cards.map((card) => (
     <div
       key={card.id}
-      className={`flex flex-col gap-12 p-4 items-center border-2 ${theme === 'dark' ? 'border-white' : 'border-black'} rounded-2xl hover:scale-105 duration-300`}
+      className={`flex flex-col gap-12 p-4 items-center border ${theme === 'dark' ? 'border-white' : 'border-black'} rounded-2xl`}
     >
       <figure className="flex-1">
         <Image
           src={`https://image.tmdb.org/t/p/original${card.poster_path}`}
-          alt={card.title}
+          alt={card.title || card.name}
           width={200}
           height={200}
-          className="rounded-lg shadow-xl shadow-black"
+          className="rounded-lg shadow-xl shadow-black h-auto w-auto"
         />
       </figure>
       <div className="flex flex-1 flex-col justify-around items-center ">
