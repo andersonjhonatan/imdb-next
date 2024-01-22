@@ -3,16 +3,9 @@ import Image from 'next/image'
 import React from 'react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import { FcRating } from "react-icons/fc";
-import { GoThumbsup } from "react-icons/go";
-import { MdSupervisorAccount } from "react-icons/md";
+import { GoThumbsup } from 'react-icons/go'
 
-
-import { MdOutlineNewReleases } from "react-icons/md";
-
-
-
-
+import { MdOutlineNewReleases } from 'react-icons/md'
 
 const Cards = ({ cards }) => {
   const { theme } = useTheme()
@@ -27,7 +20,9 @@ const Cards = ({ cards }) => {
       >
         <figure className="flex-1">
           <Image
-            src={`https://image.tmdb.org/t/p/original${card.poster_path || card.backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/original${
+              card.poster_path || card.backdrop_path
+            }`}
             alt={card.title || card.name}
             width={200}
             height={200}
@@ -40,12 +35,12 @@ const Cards = ({ cards }) => {
           </p>
           <h1 className="text-xl font-bold">{card.title || card.name}</h1>
           <div className="flex gap-2 w-full justify-around">
-            {/* <p className="text-sm flex items-center gap-1"><FcRating/> {card.vote_average}</p>
-            <p className="text-sm flex items-center gap-1"><MdSupervisorAccount size={25} /> {card.popularity}</p> */}
             <p className="text-sm flex items-center gap-1">
               <MdOutlineNewReleases /> {card.release_date || card.first_air_date}
             </p>
-            <p className="text-sm flex items-center gap-1"><GoThumbsup size={20} /> {card.vote_count}</p>
+            <p className="text-sm flex items-center gap-1">
+              <GoThumbsup size={20} /> {card.vote_count}
+            </p>
           </div>
         </div>
       </Link>
