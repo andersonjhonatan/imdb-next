@@ -1,5 +1,4 @@
 import Cards from '@/components/Card'
-import Image from 'next/image'
 
 const API_KEY = process.env.API_KEY
 

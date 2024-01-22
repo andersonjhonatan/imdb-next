@@ -1,12 +1,16 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
+import { useTheme } from 'next-themes'
+
 
 const Cards = ({ cards }) => {
+  const { theme } = useTheme()
 
   const cardResult = cards.map((card) => (
     <div
       key={card.id}
-      className=" border border-black flex flex-col gap-2 p-4 items-center"
+      className={`flex flex-col gap-12 p-4 items-center border-2 ${theme === 'dark' ? 'border-white' : 'border-black'} rounded-2xl hover:scale-105 duration-300`}
     >
       <figure className="flex-1">
         <Image
@@ -17,13 +21,19 @@ const Cards = ({ cards }) => {
           className="rounded-lg shadow-xl shadow-black"
         />
       </figure>
-      <div className="flex flex-1 flex-col justify-around items-center border border-white">
-        <p className="text-sm text-wrap text-justify ">{card.overview.length < 48 ? 'No description available' : card.overview}</p>
+      <div className="flex flex-1 flex-col justify-around items-center ">
+        <p className="text-sm text-wrap text-justify ">
+          {card.overview.length < 48 ? 'No description available' : card.overview}
+        </p>
         <h1>{card.title}</h1>
       </div>
     </div>
   ))
-  return <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">{cardResult}</div>
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {cardResult}
+    </div>
+  )
 }
 
 export default Cards
