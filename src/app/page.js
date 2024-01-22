@@ -1,4 +1,4 @@
-import Cards from '@/components/Card'
+import Cards from '@/components/Cards'
 
 const API_KEY = process.env.API_KEY
 
@@ -17,6 +17,7 @@ export default async function Home({ searchParams }) {
   }
 
   const data = await response.json()
+  console.log(data)
 
   const results = data.results
 
