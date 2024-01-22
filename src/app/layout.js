@@ -2,8 +2,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Providers from './Providers'
-import Trending from '@/components/Trending'
 import SearchItem from '@/components/SearchItem'
+import NavBarTrendingTopRated from '@/components/NavBarTrendingTopRated'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,16 +14,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={inter.className}>
         <Providers>
           <Header />
-          <Trending
-            topTrending="/top-trending"
-            trending="Trending"
-            rated="Top Rated"
-            topRated="/top-rated"
-          />
+          <NavBarTrendingTopRated />
           <SearchItem name="Search Keywords..." search="Search" />
           {children}
         </Providers>

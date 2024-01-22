@@ -3,10 +3,14 @@
 import Link from 'next/link'
 import React from 'react'
 
-function AboutComponent({ title, address, Icon }) {
+function AboutComponent({ title1, title2, title3}) {
   return (
     <div className="flex justify-center">
-      <h1 className="text-3xl font-bold">{title}</h1>
+      <div>
+        <Link href="/" className="text-3xl hover:text-amber-600">{title1}</Link>
+        <Link href="/" className="text-3xl hover:text-amber-600">{title2}</Link>
+        <Link href="/" className="text-3xl hover:text-amber-600">{title3}</Link>
+      </div>
     </div>
   )
 }
