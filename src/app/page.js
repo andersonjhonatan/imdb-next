@@ -20,30 +20,10 @@ export default async function Home({ searchParams }) {
 
   const results = data.results
 
-  const card = results.map((result) => (
-    <div
-      key={result.id}
-      className=" border border-black flex flex-col gap-2 p-4 items-center"
-    >
-      <div className="flex flex-1 flex-col justify-around items-center">
-        <h1>{result.title}</h1>
-        <p className="text-sm">{result.overview}</p>
-      </div>
-      <figure className="flex-1">
-        <Image
-          src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
-          alt={result.title}
-          width={200}
-          height={200}
-          className="rounded-lg shadow-xl shadow-black"
-        />
-      </figure>
-    </div>
-  ))
 
   return (
-    <div className="grid grid-cols-4 gap-4 border border-red-500 p-4">
-      <Cards card={card} />
+    <div>
+      <Cards cards={results} />
     </div>
   )
 }
