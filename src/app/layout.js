@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Header />
           <NavBarTrendingTopRated />
-          <SearchItem name="Search Keywords..." search="Search" />
+          <SearchItem  />
           {children}
         </Providers>
       </body>

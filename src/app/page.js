@@ -1,3 +1,4 @@
+
 import Cards from '@/components/Cards'
 
 const API_KEY = process.env.API_KEY
