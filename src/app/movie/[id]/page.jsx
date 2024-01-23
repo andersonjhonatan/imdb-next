@@ -15,13 +15,12 @@ const MoviePage = async ({ params }) => {
 
   const movie = await res.json()
 
-
   return (
     <div className="grid grid-cols-2 max-md:grid-cols-1 p-16 bg-white/10 border border-gray-700/50 rounded-md max-w-6xl mx-auto mt-12 py-8 px-4">
       <figure className="flex-1 flex items-center justify-center">
         <Image
           src={`https://image.tmdb.org/t/p/original${
-            movie?.backdrop_path || movie?.poster_path 
+            movie?.backdrop_path || movie?.poster_path
           }`}
           alt={movie?.title}
           width={500}
@@ -44,9 +43,17 @@ const MoviePage = async ({ params }) => {
           <p className="text-sm flex items-center gap-1">
             <MdSupervisorAccount size={25} /> {movie?.popularity}
           </p>
-          <div className='flex gap-2'>Genres: {movie?.genres.map((genre) => (
-            <p key={genre.id} className="text-sm flex items-center gap-1 underline underline-offset-8" >{genre.name}</p>
-          ))}</div>
+        </div>
+        <div className="flex gap-2 max-w-72 max-md:mx-auto">
+          Genres:{' '}
+          {movie?.genres.map((genre) => (
+            <p
+              key={genre.id}
+              className="text-sm flex max-md:flex-col items-center gap-1 underline underline-offset-8"
+            >
+              {genre.name}
+            </p>
+          ))}
         </div>
       </div>
     </div>
